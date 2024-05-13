@@ -10,7 +10,7 @@ export default function Experience() {
   // const y = useTransform(scrollY, [0, 500], [0, -100]);
   return (
     <motion.div
-      className="container px-6 m-auto"
+      className="container px-6 m-auto mt-[4rem] md:mt-0"
       // style={{ y }}
       // initial={{ opacity: 0, y: 100 }}
       // animate={{ opacity: 1, y: 0 }}

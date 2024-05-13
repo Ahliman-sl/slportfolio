@@ -1,4 +1,4 @@
-import Navbar from "../Components/Navbar";
+// import Navbar from "../Components/Navbar";
 import left from "../Assets/left.png";
 import right from "../Assets/right.png";
 // import qrcode from "../Assets/qrcode.png";
@@ -10,7 +10,6 @@ import { motion } from "framer-motion";
 function Header() {
   return (
     <div>
-      <Navbar />
       <HeaderText />
       {/* Sol üst köşeye yerleştirilmiş left.png */}
       <img
@@ -44,7 +43,7 @@ function HeaderText() {
       <div className="container px-6 w-auto">
         <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12 justify-items-center items-center">
           <motion.div
-            className="col-span-4 lg:col-span-6 z-10 flex flex-col gap-4 pt-20 md:pt-0 "
+            className="col-span-4 lg:col-span-6 z-10 flex flex-col gap-4 pt-[5rem] md:pt-0 "
             initial={{
               // rotate: 0,
               opacity: 0,
