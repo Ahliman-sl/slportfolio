@@ -1,12 +1,11 @@
-// import Navbar from "../Components/Navbar";
 import left from "../Assets/left.png";
 import right from "../Assets/right.png";
-// import qrcode from "../Assets/qrcode.png";
 import { FaLinkedin } from "react-icons/fa";
 import ResumeButton from "../Components/ResumeButton.jsx";
 import profilPicture from "../Assets/profil.png";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
+
 function Header() {
   return (
     <div>
@@ -15,14 +14,18 @@ function Header() {
       <img
         src={left}
         alt="Left"
-        className="absolute top-0 left-0 w-50 h-auto"
+        className="absolute top-0 left-0"
+        width="500"
+        height="375"
       />
 
       {/* Bottom right.png */}
       <img
         src={right}
         alt="Right"
-        className="absolute bottom-0 right-0 w-[26rem] h-auto"
+        className="absolute bottom-0 right-0"
+        width="416"
+        height="auto"
       />
     </div>
   );
@@ -38,11 +41,9 @@ function HeaderText() {
           <motion.div
             className="col-span-4 lg:col-span-6 z-10 flex flex-col gap-4 pt-[5rem] md:pt-0 "
             initial={{
-              // rotate: 0,
               opacity: 0,
             }}
             animate={{
-              // rotate: 360,
               opacity: 1,
             }}
             transition={{
@@ -52,7 +53,7 @@ function HeaderText() {
             <p className="text-3xl text-[#7c3aed] font-bold">{`I'm`}</p>
             <h1 className="text-5xl font-bold">Ahliman Suleymanli</h1>
             <TypeAnimation
-              className="text-left sm:text-xl mid:text-2xl lg:text-4xl  w-full h-[2rem] font-semibold"
+              className="text-left sm:text-xl mid:text-2xl lg:text-4xl w-full h-[2rem] font-semibold"
               sequence={[
                 "Welcome",
                 2500,
@@ -82,7 +83,10 @@ function HeaderText() {
           <div className="col-span-4 lg:col-span-6 z-10">
             <img
               src={profilPicture}
+              alt="Profil Picture"
               className="w-[18.5rem] h-auto rounded-full"
+              width="296"
+              height="296"
             />
           </div>
         </div>
