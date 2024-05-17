@@ -7,14 +7,14 @@ export default function Skills() {
   const [showEducation, setShowEducation] = useState(true);
 
   return (
-    <section className="w-full h-max mt-[12rem]">
+    <section className="w-full h-max mt-[12rem] mb-[5rem]">
       <div className="container px-6 m-auto">
         <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12">
           <div className="col-span-4 lg:col-span-6 flex flex-col gap-5">
             <h2 className="text-5xl font-bold">Skills & Experience</h2>
             <p className="text-xl">
-              Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No
-              stet est diam rebum amet diam ipsum clita dolor duo clita sit.
+              For detailed information about my skill levels, education, and
+              work experience, please visit the relevant sections on my profile.
             </p>
             <h3 className="text-3xl font-semibold">My Skills</h3>
             <div className="w-full h-max flex flex-col lg:flex-row">
@@ -78,8 +78,16 @@ function ExperienceContainer() {
   return (
     <>
       <div className="w-full h-max flex items-center justify-start gap-10 mt-5">
-        <ExperienceText />
-        <ExperienceText />
+        <ExperienceText
+          title=" 166 FREIGHT AND LOGISTICS "
+          text="JUNIOR IT SPECIALIST"
+          date="2020-2021"
+        />
+        <ExperienceText
+          title="SHUTTERSTOCK "
+          text="FREELANCE SHUTTERSTOCK CONTRIBUTOR"
+          date="2018-2019"
+        />
       </div>
       <div className="w-full h-max flex items-center justify-start gap-10 mt-5">
         <ExperienceText />
@@ -92,8 +100,16 @@ function EducationContainer() {
   return (
     <>
       <div className="w-full h-max flex items-center justify-start gap-10 mt-5">
-        <EducationText />
-        <EducationText />
+        <EducationText
+          text="Finance,Bachelour degree"
+          title="UNEC"
+          date="2016-2020"
+        />
+        <EducationText
+          text="Tax and Taxation,Master Degree"
+          title="Azerbaijan University"
+          date="2020-2022"
+        />
       </div>
       <div className="w-full h-max flex items-center justify-start gap-10 mt-5">
         <EducationText />
@@ -103,21 +119,21 @@ function EducationContainer() {
   );
 }
 
-function ExperienceText() {
+function ExperienceText({ title, text, date }) {
   return (
-    <div className="w-[10rem] h-max flex flex-col gap-2 p-3">
-      <p className="text-2xl font-semibold">UI Designer</p>
-      <p className="text-md text-purple-800">2000 - 2045</p>
-      <p>Apex Software Inc</p>
+    <div className="w-full h-max flex flex-col gap-2 p-3">
+      <p className="text-2xl font-semibold">{title}</p>
+      <p>{text}</p>
+      <p className="text-md text-purple-800">{date}</p>
     </div>
   );
 }
-function EducationText() {
+function EducationText({ title, text, date }) {
   return (
-    <div className="w-[10rem] h-max flex flex-col gap-2 p-3">
-      <p className="text-2xl font-semibold">Education</p>
-      <p className="text-md text-purple-800">2000 - 2045</p>
-      <p>Apex Software Inc</p>
+    <div className="w-full h-max flex flex-col gap-2 p-3">
+      <p className="text-2xl  font-semibold">{title}</p>
+      <p className="text-xl">{text}</p>
+      <p className="text-md text-purple-800">{date}</p>
     </div>
   );
 }

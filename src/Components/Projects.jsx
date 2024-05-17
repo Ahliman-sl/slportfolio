@@ -13,6 +13,8 @@ import weatherapp from "../Assets/ProjectImages/weatherapp.png";
 import onlinekeyboard from "../Assets/ProjectImages/onlinekeyboard.png";
 import lawyerwebsite from "../Assets/ProjectImages/lawyerWebsite.png";
 import loginPage from "../Assets/ProjectImages/loginPage.png";
+import reactQuiz from "../Assets/ProjectImages/reactquiz.png";
+import { useEffect } from "react";
 import {
   Card,
   CardHeader,
@@ -23,161 +25,207 @@ import {
   Tooltip,
   // IconButton,
 } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
-export default function Projects() {
+const projectsData = [
+  {
+    text: "Usepopcorn",
+    description:
+      "A watched movie app that helps you keep track of the films you've watched, offering personalized recommendations and ratings.",
+    imgSRC: usepopcorn,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    urlLink: "https://usepopcornsl.netlify.app/",
+  },
+  {
+    text: "Lawyer Website",
+    description:
+      "I've developed a user-friendly and functional design for a lawyer website. The site is customized to meet the needs of clients.",
+    imgSRC: lawyerwebsite,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    urlLink: "https://lawyersl.netlify.app/",
+  },
+  {
+    text: "TT login",
+    description:
+      "A user-friendly and secure login page that unlocks new travel experiences. An ideal platform for managing your travel plans and safeguarding your information.",
+    imgSRC: loginPage,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    urlLink: "https://loginsl.netlify.app/",
+  },
+  {
+    text: "InSightSphere",
+    description:
+      "My website is a platform where you can stay updated on the latest news and current events.",
+    imgSRC: InsightSphere,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program6: "Responsive",
+    program7: "Bootstrap",
+    urlLink: "https://insightspheresl.netlify.app/",
+  },
+  {
+    text: "Eat and Split",
+    description:
+      "Eat and Split is a convenient app that allows you to easily split restaurant bills and make payments.",
+    imgSRC: eatnsplit,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    urlLink: "https://eatnsplitsl.netlify.app/",
+  },
+
+  {
+    text: "Mapty",
+    description:
+      "My website allows users to easily navigate to their desired location by clicking on the desired location in their city, enabling them to set a marker, for instance, for running purposes.",
+    imgSRC: Mapty,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program6: "Responsive",
+    urlLink: "https://maptysl.netlify.app/",
+  },
+  {
+    text: "Bankist",
+    description:
+      "My website is an online banking application where users can create accounts and perform transactions such as sending money and applying for loans.",
+    imgSRC: Bankist,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program6: "Responsive",
+    urlLink: "https://bankistsl.netlify.app/",
+  },
+  {
+    text: "React Quiz",
+    description:
+      "Test your knowledge with this interactive React quiz! Dive into diverse topics and challenge yourself with engaging questions.",
+    imgSRC: reactQuiz,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    urlLink: "https://reactquizsl.netlify.app",
+  },
+  {
+    text: "GMN",
+    description:
+      "My website hosts a 'Guess My Number' game where users can enjoy guessing numbers.",
+    imgSRC: GMN,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program6: "Responsive",
+    urlLink: "https://gmngsl.netlify.app/",
+  },
+  {
+    text: "Forkify",
+    description:
+      "My website is a recipe site where you can discover a wide range of culinary delights.",
+    imgSRC: Forkify,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program6: "Responsive",
+    urlLink: "https://forkifysl.netlify.app/",
+  },
+  {
+    text: "Online Keyboard",
+    description:
+      "An online keyboard app that provides virtual keyboard functionality for convenient typing across various devices and platforms.",
+    imgSRC: onlinekeyboard,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    urlLink: "https://onlinekeyboardsl.netlify.app/",
+  },
+  {
+    text: "Rollin Calc",
+    description:
+      "A calculator app designed for quick and efficient mathematical calculations, featuring a user-friendly interface and essential functions for everyday use.",
+    imgSRC: calculator,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    urlLink: "https://rcalcsl.netlify.app/",
+  },
+  {
+    text: "Weather App",
+    description:
+      "A weather app providing real-time updates on current weather conditions, forecasts, and personalized weather alerts based on location preferences.",
+    imgSRC: weatherapp,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    urlLink: "https://rcalcsl.netlify.app/",
+  },
+  // Diğer projeler buraya eklenecek...
+];
+export default function Projects({ showOnlyFirstSix }) {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Sayfayı en üste kaydır
+  }, []); // Sadece bir kere yürüt
+  // Eğer showOnlyFirstFour true ise sadece ilk dört projeyi göster
+  const projectsToShow = showOnlyFirstSix
+    ? projectsData.slice(0, 6)
+    : projectsData;
+
   return (
     <>
-      <p
-        className="text-white text-4xl text-center w-full h-max mt-10"
-        id="projects"
-      >
-        Check My Projects blow
-      </p>
-      <div className="w-full justify-center items-center h-max flex flex-row flex-wrap gap-5 mt-10">
-        <BookingCard
-          text="Usepopcorn"
-          description="A watched movie app that helps you keep track of the films you've watched, offering personalized recommendations and ratings."
-          imgSRC={usepopcorn}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program4="SCSS"
-          program5="React"
-          program6="Responsive"
-          program7="Tailwind CSS"
-          urlLink="https://usepopcornsl.netlify.app/"
-        />
-        <BookingCard
-          text="Lawyer Website"
-          description="I've developed a user-friendly and functional design for a lawyer website. The site is customized to meet the needs of clients."
-          imgSRC={lawyerwebsite}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program4="SCSS"
-          program5="React"
-          program6="Responsive"
-          program7="Tailwind CSS"
-          urlLink="https://lawyersl.netlify.app/"
-        />
-        <BookingCard
-          text="TT login"
-          description="A user-friendly and secure login page that unlocks new travel experiences. An ideal platform for managing your travel plans and safeguarding your information."
-          imgSRC={loginPage}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program4="SCSS"
-          program5="React"
-          program6="Responsive"
-          program7="Tailwind CSS"
-          urlLink="https://loginsl.netlify.app/"
-        />
-        <BookingCard
-          text="InSightSphere"
-          description="My website is a platform where you can stay updated on the latest news and current events."
-          imgSRC={InsightSphere}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program6="Responsive"
-          program7="Bootstrap"
-          urlLink="https://insightspheresl.netlify.app/"
-        />
-        <BookingCard
-          text="Eat and Split"
-          description="Eat and Split is a convenient app that allows you to easily split restaurant bills and make payments."
-          imgSRC={eatnsplit}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program4="SCSS"
-          program5="React"
-          program6="Responsive"
-          urlLink="https://eatnsplitsl.netlify.app/"
-        />
-        <BookingCard
-          text="Mapty"
-          description="My website allows users to easily navigate to their desired location by clicking on the desired location in their city, enabling them to set a marker, for instance, for running purposes."
-          imgSRC={Mapty}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program6="Responsive"
-          urlLink="https://maptysl.netlify.app/"
-        />
-        <BookingCard
-          text="Bankist"
-          description="My website is an online banking application where users can create accounts and perform transactions such as sending money and applying for loans."
-          imgSRC={Bankist}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program6="Responsive"
-          urlLink="https://bankistsl.netlify.app/"
-        />
-
-        <BookingCard
-          text="GMN"
-          description="My website hosts a 'Guess My Number' game where users can enjoy guessing numbers."
-          imgSRC={GMN}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program6="Responsive"
-          urlLink="https://gmngsl.netlify.app/"
-        />
-        <BookingCard
-          text="Forkify"
-          description="My website is a recipe site where you can discover a wide range of culinary delights."
-          imgSRC={Forkify}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program4="SCSS"
-          program6="Responsive"
-          urlLink="https://forkifysl.netlify.app/"
-        />
-
-        <BookingCard
-          text="Online Keyboard"
-          description="An online keyboard app that provides virtual keyboard functionality for convenient typing across various devices and platforms."
-          imgSRC={onlinekeyboard}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program4="SCSS"
-          program5="React"
-          program6="Responsive"
-          urlLink="https://onlinekeyboardsl.netlify.app/"
-        />
-
-        <BookingCard
-          text="Rollin Calc"
-          description="A calculator app designed for quick and efficient mathematical calculations, featuring a user-friendly interface and essential functions for everyday use."
-          imgSRC={calculator}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program4="SCSS"
-          program5="React"
-          program6="Responsive"
-          program7="Tailwind CSS"
-          urlLink="https://rcalcsl.netlify.app/"
-        />
-        <BookingCard
-          text="Weather App"
-          description="A weather app providing real-time updates on current weather conditions, forecasts, and personalized weather alerts based on location preferences."
-          imgSRC={weatherapp}
-          program1="HTML5"
-          program2="CSS"
-          program3="JavaScript"
-          program4="SCSS"
-          program5="React"
-          program6="Responsive"
-          program7="Tailwind CSS"
-          urlLink="https://rcalcsl.netlify.app/"
-        />
+      <div className="w-full h-max flex flex-col gap-10">
+        <div className="w-full justify-center items-center h-max flex flex-row flex-wrap gap-5 mt-4 ">
+          {/* Proje verilerini haritalama ve BookingCard bileşenlerini oluşturma */}
+          {projectsToShow.map((project, index) => (
+            <BookingCard key={index} {...project} />
+          ))}
+        </div>
+        <div className="w-full h-max flex items-center justify-center">
+          {showOnlyFirstSix ? (
+            <Link
+              to="/projects"
+              className="inline-flex h-12 w-[10rem] items-center justify-center gap-2 whitespace-nowrap rounded bg-emerald-500 px-6 text-sm font-medium tracking-wide text-white shadow-lg shadow-emerald-200 transition duration-300 hover:bg-emerald-600 hover:shadow-md hover:shadow-emerald-200 focus:bg-emerald-700 focus:shadow-md focus:shadow-emerald-200 focus-visible:outline-none disabled:cursor-not-allowed disabled:border-emerald-300 disabled:bg-emerald-300 disabled:shadow-none"
+            >
+              All projets
+            </Link>
+          ) : null}
+        </div>
       </div>
     </>
   );
@@ -232,6 +280,7 @@ function BookingCard({
             "Bmi calculator",
             "Lawyer Website",
             "TT login",
+            "React Quiz",
           ].includes(text) && (
             <Tooltip content={program7}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
@@ -273,6 +322,7 @@ function BookingCard({
             "Bmi calculator",
             "Lawyer Website",
             "TT login",
+            "React Quiz",
           ].includes(text) && (
             <Tooltip content={program5}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">

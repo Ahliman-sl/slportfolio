@@ -11,21 +11,14 @@ function Header() {
   return (
     <div>
       <HeaderText />
-      {/* Sol üst köşeye yerleştirilmiş left.png */}
+      {/* Top left left.png */}
       <img
         src={left}
         alt="Left"
         className="absolute top-0 left-0 w-50 h-auto"
       />
 
-      {/* Sağ üst köşeye yerleştirilmiş qrcode.png */}
-      {/* <img
-        src={qrcode}
-        alt="QR Code"
-        className="absolute top-0 right-0 w-40 h-auto"
-      /> */}
-
-      {/* Sağ alt köşeye yerleştirilmiş right.png */}
+      {/* Bottom right.png */}
       <img
         src={right}
         alt="Right"
@@ -77,7 +70,12 @@ function HeaderText() {
             <div className="w-max h-max flex items-center gap-4">
               <ResumeButton />
               <div className="icon-container">
-                <FaLinkedin className="text-4xl text-blue-700 icon cursor-pointer transition duration-300 hover:scale-[1.1]" />
+                <a
+                  href="https://linkedin.com/in/ahliman-suleymanli-7a44a0302"
+                  target="_blank"
+                >
+                  <FaLinkedin className="text-4xl text-blue-700 icon cursor-pointer transition duration-300 hover:scale-[1.1]" />
+                </a>
               </div>
             </div>
           </motion.div>

@@ -1,10 +1,43 @@
-import { useState } from "react";
-import { FaReact } from "react-icons/fa";
+import { useState, useEffect, useRef } from "react";
+import profilePicture from "../Assets/profil2.jpeg";
+import {
+  FaReact,
+  FaLinkedin,
+  FaFacebook,
+  FaInstagram,
+  FaGithub,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isToggleOpen, setIsToggleOpen] = useState(false);
+  const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
 
+  const profileMenuRef = useRef(null);
+
+  function toggleProfileMenu() {
+    setIsProfileMenuOpen(!isProfileMenuOpen);
+  }
+
+  function handleClick() {
+    setIsToggleOpen(false);
+    setIsProfileMenuOpen(false);
+  }
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        profileMenuRef.current &&
+        !profileMenuRef.current.contains(event.target)
+      ) {
+        setIsProfileMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [profileMenuRef]);
   return (
     <>
       {/*<!-- Component: Navbar with Avatar --> */}
@@ -17,16 +50,15 @@ export default function Navbar() {
             role="navigation"
           >
             {/*      <!-- Brand logo --> */}
-            <a
-              id="WindUI"
-              aria-label="WindUI logo"
+            <div
+              id="ReactLogo"
+              aria-label="React logo"
               aria-current="page"
               className="flex items-center gap-2 whitespace-nowrap py-3 text-lg focus:outline-none lg:flex-1"
-              href="javascript:void(0)"
             >
               <FaReact className="text-5xl text-orange-500" />
               SL Portfolio
-            </a>
+            </div>
             {/*      <!-- Mobile trigger --> */}
             <button
               className={`relative order-10 block h-10 w-10 self-center lg:hidden
@@ -67,10 +99,10 @@ export default function Navbar() {
             >
               <li role="none" className="flex items-stretch">
                 <Link
+                  onClick={handleClick}
                   role="menuitem"
                   aria-haspopup="false"
                   className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                  href="javascript:void(0)"
                   to="/"
                 >
                   <span>Main</span>
@@ -78,21 +110,22 @@ export default function Navbar() {
               </li>
               <li role="none" className="flex items-stretch">
                 <Link
+                  onClick={handleClick}
                   role="menuitem"
                   aria-current="page"
                   aria-haspopup="false"
                   className="flex items-center gap-2 py-4 text-emerald-500 transition-colors duration-300 hover:text-emerald-600 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                  href="javascript:void(0)"
+                  to="/projects"
                 >
                   <span>Projects</span>
                 </Link>
               </li>
               <li role="none" className="flex items-stretch">
                 <Link
+                  onClick={handleClick}
                   role="menuitem"
                   aria-haspopup="false"
                   className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
-                  href="javascript:void(0)"
                   to="/articles"
                 >
                   <span>Articles</span>
@@ -100,6 +133,7 @@ export default function Navbar() {
               </li>
               <li role="none" className="flex items-stretch">
                 <Link
+                  onClick={handleClick}
                   role="menuitem"
                   aria-haspopup="false"
                   className="flex items-center gap-2 py-4 transition-colors duration-300 hover:text-emerald-500 focus:text-emerald-600 focus:outline-none focus-visible:outline-none lg:px-8"
@@ -111,24 +145,75 @@ export default function Navbar() {
             </ul>
             <div className="ml-auto flex items-center px-6 lg:ml-0 lg:p-0">
               {/*        <!-- Avatar --> */}
-              <a
+              <div
+                onClick={toggleProfileMenu}
                 href="#"
-                className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-white"
+                className="relative inline-flex h-10 w-10 items-center justify-center rounded-full text-white cursor-pointer"
               >
                 <img
-                  src="https://i.pravatar.cc/40?img=35"
+                  src={profilePicture}
                   alt="user name"
                   title="user name"
                   width="40"
                   height="40"
-                  className="max-w-full rounded-full"
+                  className="max-w-full h-full object-cover rounded-full"
                 />
                 <span className="absolute bottom-0 right-0 inline-flex items-center justify-center gap-1 rounded-full border-2 border-white bg-pink-500 p-1 text-sm text-white">
                   <span className="sr-only"> 7 new emails </span>
                 </span>
-              </a>
+              </div>
               {/*        <!-- End Avatar --> */}
             </div>
+            {isProfileMenuOpen && (
+              <div
+                className="origin-top-right  absolute right-0 mt-2 w-48 rounded-l-md shadow-lg bg-stone-50 ring-1 ring-black ring-opacity-5"
+                ref={profileMenuRef}
+              >
+                <div
+                  className="py-1"
+                  role="menu"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu"
+                >
+                  <a
+                    className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3"
+                    role="menuitem"
+                    href="https://linkedin.com/in/ahliman-suleymanli-7a44a0302"
+                    target="_blank"
+                    onClick={handleClick}
+                  >
+                    Follow me on <FaLinkedin className="text-2xl" />
+                  </a>
+                  <a
+                    className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3"
+                    role="menuitem"
+                    href="https://github.com/Ahliman-sl"
+                    target="_blank"
+                    onClick={handleClick}
+                  >
+                    Follow me on <FaGithub className="text-2xl" />
+                  </a>
+                  <a
+                    className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3"
+                    role="menuitem"
+                    href="https://www.facebook.com/ehliman.s"
+                    target="_blank"
+                    onClick={handleClick}
+                  >
+                    Follow me on <FaFacebook className="text-2xl" />
+                  </a>
+                  <a
+                    className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3"
+                    role="menuitem"
+                    href="https://www.instagram.com/ahliman_sl/"
+                    target="_blank"
+                    onClick={handleClick}
+                  >
+                    Follow me on <FaInstagram className="text-2xl" />
+                  </a>
+                </div>
+              </div>
+            )}
           </nav>
         </div>
       </header>

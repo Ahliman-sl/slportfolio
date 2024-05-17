@@ -27,10 +27,24 @@ export default function Footer() {
                   Social Media Links
                 </h2>
                 <div className="flex items-center justify-end gap-4">
-                  <FaLinkedin className="text-2xl transition duration-300 hover:scale-[1.1] cursor-pointer" />
-                  <FaGithub className="text-2xl transition duration-300 hover:scale-[1.1] cursor-pointer" />
-                  <FaFacebook className="text-2xl transition duration-300 hover:scale-[1.1] cursor-pointer" />
-                  <FaInstagram className="text-2xl transition duration-300 hover:scale-[1.1] cursor-pointer" />
+                  <a
+                    href="https://linkedin.com/in/ahliman-suleymanli-7a44a0302"
+                    target="_blank"
+                  >
+                    <FaLinkedin className="text-2xl transition duration-300 hover:scale-[1.1] cursor-pointer" />
+                  </a>
+                  <a href="https://github.com/Ahliman-sl" target="_blank">
+                    <FaGithub className="text-2xl transition duration-300 hover:scale-[1.1] cursor-pointer" />
+                  </a>
+                  <a href="https://www.facebook.com/ehliman.s" target="_blank">
+                    <FaFacebook className="text-2xl transition duration-300 hover:scale-[1.1] cursor-pointer" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/ahliman_sl/"
+                    target="_blank"
+                  >
+                    <FaInstagram className="text-2xl transition duration-300 hover:scale-[1.1] cursor-pointer" />
+                  </a>
                 </div>
               </nav>
             </div>

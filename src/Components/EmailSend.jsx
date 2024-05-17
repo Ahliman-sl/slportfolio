@@ -9,7 +9,6 @@ export default function EmailSend() {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm("service_41fka7z", "template_fs7w17a", form.current, {
         publicKey: "cMOJNAf15-6wHCLrO",
@@ -35,7 +34,7 @@ export default function EmailSend() {
   return (
     <div className="w-full h-max">
       {isSucsess ? (
-        <Sucsess />
+        <Success />
       ) : isError ? (
         <Reject />
       ) : (
@@ -45,18 +44,21 @@ export default function EmailSend() {
           className="flex flex-col items-center justify-center gap-5 pb-5 mx-4 font-meriendo "
         >
           <input
+            required
             type="text"
-            name="user_name"
+            name="from_name"
             placeholder="Your Name"
             className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 w-full"
           />
           <input
+            required
             type="email"
-            name="user_email"
+            name="email_id"
             placeholder="Your Email"
             className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 w-full"
           />
           <textarea
+            required
             name="message"
             placeholder="Subject"
             className="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 w-full h-24 resize-none"
@@ -72,22 +74,24 @@ export default function EmailSend() {
   );
 }
 
-function Sucsess() {
+function Success() {
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <p className="text-white text-md ">
-        You message send sucsessfully,I back to you as soon as possible..
-      </p>
+    <div
+      className="w-full px-4 py-3 text-sm border rounded border-emerald-100 bg-emerald-50 text-emerald-500"
+      role="alert"
+    >
+      <p>You message send sucsessfully,I back to you as soon as possible..</p>
     </div>
   );
 }
 
 function Reject() {
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <p className="text-white text-md ">
-        Something went wrong,Try again a little bit later
-      </p>
+    <div
+      className="w-full px-4 py-3 text-sm text-pink-500 border border-pink-100 rounded bg-pink-50"
+      role="alert"
+    >
+      <p>Danger! Look behind you</p>
     </div>
   );
 }

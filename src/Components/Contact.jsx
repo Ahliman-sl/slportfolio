@@ -4,6 +4,12 @@ import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import { FaMedium } from "react-icons/fa6";
 
 export default function Contact() {
+  const handleButtonClick = () => {
+    window.open(
+      "https://linkedin.com/in/ahliman-suleymanli-7a44a0302",
+      "_blank"
+    );
+  };
   return (
     <section className="w-full h-max mt-[12rem] p-5">
       <div className="container px-6 m-auto">
@@ -31,22 +37,34 @@ export default function Contact() {
             <div className="w-full h-max mt-5">
               <p className="text-xl">Follow me : </p>
               <div className="w-full h-max p-4 border-b-2 text-2xl font-semibold border-gray-400 flex gap-2">
-                <FaLinkedin className="text-3xl text-sky-950 transition duration-300 hover:scale-[1.1]" />
-                <FaMedium className="text-3xl text-sky-950 duration-300 hover:scale-[1.1] cursor-pointer" />
-                <FaFacebook className="text-3xl text-sky-950 duration-300 hover:scale-[1.1] cursor-pointer" />
-                <FaInstagram className="text-3xl text-sky-950 duration-300 hover:scale-[1.1] cursor-pointer" />
+                <a
+                  href="https://linkedin.com/in/ahliman-suleymanli-7a44a0302"
+                  target="_blank"
+                >
+                  <FaLinkedin className="text-3xl text-sky-950 transition duration-300 hover:scale-[1.1]" />
+                </a>
+                <a href="https://github.com/Ahliman-sl" target="_blank">
+                  <FaMedium className="text-3xl text-sky-950 duration-300 hover:scale-[1.1] cursor-pointer" />
+                </a>
+                <a href="https://www.facebook.com/ehliman.s" target="_blank">
+                  <FaFacebook className="text-3xl text-sky-950 duration-300 hover:scale-[1.1] cursor-pointer" />
+                </a>
+                <a href="https://www.instagram.com/ahliman_sl/" target="_blank">
+                  <FaInstagram className="text-3xl text-sky-950 duration-300 hover:scale-[1.1] cursor-pointer" />
+                </a>
               </div>
             </div>
           </div>
           <div className="col-span-4 lg:col-span-6 flex flex-col gap-3">
             <div className="w-full h-max flex justify-end">
-              <ReusableButton>{`Say Hello :)`}</ReusableButton>
+              <ReusableButton
+                onClick={handleButtonClick}
+              >{`Let's Connect :)`}</ReusableButton>
             </div>
             <p className="text-xl">
-              {`The contact form is currently inactive. Get a functional and
-              working contact form with Ajax & PHP in a few minutes. Just copy
-              and paste the files, add a little code and you're done. Download
-              Now.`}
+              {` I'm currently looking for new opportunities,my inbox is always open.
+            Whethever you have a question or just want to say hi, I'll try my
+            best to get back to you!`}
             </p>
             <EmailSend />
           </div>

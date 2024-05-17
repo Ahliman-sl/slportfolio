@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import ListenMusic from "./ListenMusic";
 // import video from "../Assets/janemaryam.mp4";
 export default function About() {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Sayfayı en üste kaydır
+  }, []); // Sadece bir kere yürüt
   return (
     <section>
       <div className="container px-6 m-auto">
