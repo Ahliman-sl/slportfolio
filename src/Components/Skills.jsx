@@ -60,7 +60,7 @@ export default function Skills() {
             </div>
           </div>
           <div className="col-span-4 lg:col-span-6 flex flex-col">
-            <div className="w-full h-max">
+            <div className="w-full h-max overflow-hidden">
               <ButtonSwitcher
                 showEducation={showEducation}
                 setShowEducation={setShowEducation}
@@ -77,7 +77,7 @@ export default function Skills() {
 function ExperienceContainer() {
   return (
     <>
-      <div className="w-full h-max flex items-center justify-start gap-10 mt-5">
+      <div className="w-full h-max flex flex-col items-center justify-start gap-10 mt-5">
         <ExperienceText
           title=" 166 FREIGHT AND LOGISTICS "
           text="JUNIOR IT SPECIALIST"
@@ -89,31 +89,23 @@ function ExperienceContainer() {
           date="2018-2019"
         />
       </div>
-      <div className="w-full h-max flex items-center justify-start gap-10 mt-5">
-        <ExperienceText />
-        <ExperienceText />
-      </div>
     </>
   );
 }
 function EducationContainer() {
   return (
     <>
-      <div className="w-full h-max flex items-center justify-start gap-10 mt-5">
-        <EducationText
-          text="Finance,Bachelour degree"
-          title="UNEC"
-          date="2016-2020"
-        />
+      <div className="w-full h-max flex  flex-col items-center justify-start gap-10 mt-5">
         <EducationText
           text="Tax and Taxation,Master Degree"
           title="Azerbaijan University"
           date="2020-2022"
         />
-      </div>
-      <div className="w-full h-max flex items-center justify-start gap-10 mt-5">
-        <EducationText />
-        <EducationText />
+        <EducationText
+          text="Finance(SABAH groups),Bachelour degree"
+          title="UNEC"
+          date="2016-2020"
+        />
       </div>
     </>
   );
