@@ -9,6 +9,8 @@ import InsightSphere from "../Assets/ProjectImages/Insgihtsphere.png";
 import Forkify from "../Assets/ProjectImages/FORKIFY.png";
 import calculator from "../Assets/ProjectImages/calculator.png";
 import weatherapp from "../Assets/ProjectImages/weatherapp.png";
+import azwayfinder from "../Assets/ProjectImages/azwayfinder.png";
+
 // import Bmicalculator from "../Assets/ProjectImages/bmicalculator.png";
 import onlinekeyboard from "../Assets/ProjectImages/onlinekeyboard.png";
 import lawyerwebsite from "../Assets/ProjectImages/lawyerWebsite.png";
@@ -55,6 +57,20 @@ const projectsData = [
     program6: "Responsive",
     program7: "Tailwind CSS",
     urlLink: "https://lawyersl.netlify.app/",
+  },
+  {
+    text: "AzWayFinder",
+    description:
+      "Through Azwayfinder, you can see the distance between the cities you want to go to within Azerbaijan, you can get acquainted with the weather forecast in the city you are going to according to the selected date.",
+    imgSRC: azwayfinder,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    urlLink: "https://azwayfinder.netlify.app",
   },
   {
     text: "TT login",
@@ -196,6 +212,7 @@ const projectsData = [
     program7: "Tailwind CSS",
     urlLink: "https://rcalcsl.netlify.app/",
   },
+
   // Diğer projeler buraya eklenecek...
 ];
 export default function Projects({ showOnlyFirstSix }) {
@@ -281,6 +298,7 @@ function BookingCard({
             "Lawyer Website",
             "TT login",
             "React Quiz",
+            "AzWayFinder",
           ].includes(text) && (
             <Tooltip content={program7}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
@@ -323,6 +341,7 @@ function BookingCard({
             "Lawyer Website",
             "TT login",
             "React Quiz",
+            "AzWayFinder",
           ].includes(text) && (
             <Tooltip content={program5}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
@@ -339,6 +358,7 @@ function BookingCard({
             "InSightSphere",
             "Lawyer Website",
             "TT login",
+            "AzWayFinder",
           ].includes(text) && (
             <Tooltip content={program6}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
