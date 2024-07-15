@@ -10,8 +10,9 @@ import Forkify from "../Assets/ProjectImages/FORKIFY.png";
 import calculator from "../Assets/ProjectImages/calculator.png";
 import weatherapp from "../Assets/ProjectImages/weatherapp.png";
 import azwayfinder from "../Assets/ProjectImages/azwayfinder.png";
-import fitnessStore from "../Assets/ProjectImages/fitnessStore.png";
-import fastreactpizza from "../Assets/ProjectImages/fastreactpizza.png";
+import fitnessStore from "../Assets/ProjectImages/fitness.png";
+import fastreactpizza from "../Assets/ProjectImages/fast.png";
+import thewildoasis from "../Assets/ProjectImages/thewildoasis.png";
 
 // import Bmicalculator from "../Assets/ProjectImages/bmicalculator.png";
 import onlinekeyboard from "../Assets/ProjectImages/onlinekeyboard.png";
@@ -64,6 +65,25 @@ const projectsData = [
     program8: "Redux Toolkit",
     program9: "React Router",
     urlLink: "https://fastpizzasl.netlify.app/",
+  },
+  {
+    text: "The Wild Oasis",
+    description:
+      "An internal hotel cabin booking application allows guests to reserve cabins seamlessly through an intuitive interface, ensuring a hassle-free stay. It also provides real-time availability and booking confirmation for efficient management.",
+    imgSRC: thewildoasis,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    program8: "Redux Toolkit",
+    program9: "React Router",
+    program10: "React Query",
+    program11: "Styled Components",
+
+    urlLink: "https://thewildsl.netlify.app",
   },
   {
     text: "Usepopcorn",
@@ -296,6 +316,8 @@ function BookingCard({
   program7,
   program8,
   program9,
+  program10,
+  program11,
   urlLink,
 }) {
   return (
@@ -303,7 +325,7 @@ function BookingCard({
       <CardHeader floated={false} color="blue-gray">
         <img
           src={imgSRC}
-          className="w-full h-[25rem] object-cover"
+          className="w-full h-max object-cover"
           alt="ui/ux review check"
         />
         <div className="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-tr from-transparent via-transparent to-black/60 " />
@@ -352,10 +374,26 @@ function BookingCard({
               </span>
             </Tooltip>
           )}
-          {["Fitness Store", "Fast-React-Pizza"].includes(text) && (
+          {["Fitness Store", "Fast-React-Pizza", "The Wild Oasis"].includes(
+            text
+          ) && (
             <Tooltip content={program9}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                 {program9}
+              </span>
+            </Tooltip>
+          )}
+          {["The Wild Oasis"].includes(text) && (
+            <Tooltip content={program10}>
+              <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
+                {program10}
+              </span>
+            </Tooltip>
+          )}
+          {["The Wild Oasis"].includes(text) && (
+            <Tooltip content={program11}>
+              <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
+                {program11}
               </span>
             </Tooltip>
           )}
@@ -397,6 +435,7 @@ function BookingCard({
             "AzWayFinder",
             "Fitness Store",
             "Fast-React-Pizza",
+            "The Wild Oasis",
           ].includes(text) && (
             <Tooltip content={program5}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
