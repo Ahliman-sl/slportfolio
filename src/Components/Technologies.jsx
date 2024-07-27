@@ -1,15 +1,14 @@
 import { AiFillHtml5 } from "react-icons/ai";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaBootstrap } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
+import { SiReactquery, SiReactrouter, SiTailwindcss } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io5";
 import { FaReact } from "react-icons/fa6";
 import { DiNpm } from "react-icons/di";
 import { BsGit } from "react-icons/bs";
 import { BsGithub } from "react-icons/bs";
-import { BsBoxSeamFill } from "react-icons/bs";
-import { SiRollupdotjs } from "react-icons/si";
 import { SiRedux } from "react-icons/si";
+import { RiSupabaseFill } from "react-icons/ri";
 
 export default function Technologies() {
   return (
@@ -30,6 +29,7 @@ export default function Technologies() {
           <FaBootstrap />
           <span className="text-[2rem] text-violet-950">Bootstrap</span>
         </div>
+
         <div className="flex flex-col items-center mx-4   text-[#4da9ff]">
           <SiTailwindcss />
           <span className="text-[2rem] text-violet-950">Tailwindcss</span>
@@ -42,9 +42,21 @@ export default function Technologies() {
           <FaReact />
           <span className="text-[2rem] text-violet-950">React</span>
         </div>
+        <div className="flex flex-col items-center mx-4 text-[#289477] ">
+          <SiReactquery />
+          <span className="text-[2rem] text-violet-950">React Query</span>
+        </div>
+        <div className="flex flex-col items-center mx-4 text-[#000000] ">
+          <SiReactrouter />
+          <span className="text-[2rem] text-violet-950">React Router</span>
+        </div>
         <div className="flex flex-col items-center mx-4 text-purple-700 ">
           <SiRedux />
           <span className="text-[2rem] text-violet-950">Redux</span>
+        </div>
+        <div className="flex flex-col items-center mx-4 text-[#289477] ">
+          <RiSupabaseFill />
+          <span className="text-[2rem] text-violet-950">Supabase</span>
         </div>
         <div className="flex flex-col items-center mx-4 text-[#ff4405] ">
           <DiNpm />
@@ -57,14 +69,6 @@ export default function Technologies() {
         <div className="flex flex-col items-center mx-4 text-black ">
           <BsGithub />
           <span className="text-[2rem] text-violet-950">Github</span>
-        </div>
-        <div className="flex flex-col items-center mx-4 text-[#ff7429] ">
-          <BsBoxSeamFill />
-          <span className="text-[2rem] text-violet-950">Parcel</span>
-        </div>
-        <div className="flex flex-col items-center mx-4 text-[#ff3300] ">
-          <SiRollupdotjs />
-          <span className="text-[2rem] text-violet-950">Rollup</span>
         </div>
       </div>
       {/* <CarouselBasicExample /> */}

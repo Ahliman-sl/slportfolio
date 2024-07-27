@@ -205,7 +205,7 @@ export default function Navbar() {
                   <a
                     className="cursor-pointer px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center gap-3"
                     role="menuitem"
-                    href="https://www.instagram.com/ahliman_sl/"
+                    href="https://www.instagram.com/ahlimansl/"
                     target="_blank"
                     onClick={handleClick}
                   >

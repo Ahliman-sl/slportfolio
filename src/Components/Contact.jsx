@@ -49,7 +49,7 @@ export default function Contact() {
                 <a href="https://www.facebook.com/ehliman.s" target="_blank">
                   <FaFacebook className="text-3xl text-sky-950 duration-300 hover:scale-[1.1] cursor-pointer" />
                 </a>
-                <a href="https://www.instagram.com/ahliman_sl/" target="_blank">
+                <a href="https://www.instagram.com/ahlimansl/" target="_blank">
                   <FaInstagram className="text-3xl text-sky-950 duration-300 hover:scale-[1.1] cursor-pointer" />
                 </a>
               </div>

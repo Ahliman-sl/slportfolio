@@ -13,6 +13,7 @@ import azwayfinder from "../Assets/ProjectImages/azwayfinder.png";
 import fitnessStore from "../Assets/ProjectImages/fitness.png";
 import fastreactpizza from "../Assets/ProjectImages/fast.png";
 import thewildoasis from "../Assets/ProjectImages/thewildoasis.png";
+import tsmPoster from "../Assets/ProjectImages/tsmPoster.png";
 
 // import Bmicalculator from "../Assets/ProjectImages/bmicalculator.png";
 import onlinekeyboard from "../Assets/ProjectImages/onlinekeyboard.png";
@@ -67,6 +68,41 @@ const projectsData = [
     urlLink: "https://fastpizzasl.netlify.app/",
   },
   {
+    text: "TSM poster",
+    description:
+      "Developed a multi-platform content scheduling tool enabling users to create and automatically share posts on Instagram, LinkedIn, Facebook, and TikTok using Supabase for backend, with React Query and Redux for state management.",
+    imgSRC: tsmPoster,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    program8: "Redux Toolkit",
+    program9: "React Router",
+    program10: "React Query",
+    program11: "Styled Components",
+    program12: "Supabase",
+
+    urlLink: "https://tsmposter.netlify.app/",
+  },
+  {
+    text: "AzWayFinder",
+    description:
+      "Through Azwayfinder, you can see the distance between the cities you want to go to within Azerbaijan, you can get acquainted with the weather forecast in the city you are going to according to the selected date.",
+    imgSRC: azwayfinder,
+    program1: "HTML5",
+    program2: "CSS",
+    program3: "JavaScript",
+    program4: "SCSS",
+    program5: "React",
+    program6: "Responsive",
+    program7: "Tailwind CSS",
+    urlLink: "https://azwayfinder.netlify.app",
+  },
+
+  {
     text: "The Wild Oasis",
     description:
       "An internal hotel cabin booking application allows guests to reserve cabins seamlessly through an intuitive interface, ensuring a hassle-free stay. It also provides real-time availability and booking confirmation for efficient management.",
@@ -113,20 +149,7 @@ const projectsData = [
     program7: "Tailwind CSS",
     urlLink: "https://lawyersl.netlify.app/",
   },
-  {
-    text: "AzWayFinder",
-    description:
-      "Through Azwayfinder, you can see the distance between the cities you want to go to within Azerbaijan, you can get acquainted with the weather forecast in the city you are going to according to the selected date.",
-    imgSRC: azwayfinder,
-    program1: "HTML5",
-    program2: "CSS",
-    program3: "JavaScript",
-    program4: "SCSS",
-    program5: "React",
-    program6: "Responsive",
-    program7: "Tailwind CSS",
-    urlLink: "https://azwayfinder.netlify.app",
-  },
+
   {
     text: "TT login",
     description:
@@ -318,6 +341,7 @@ function BookingCard({
   program9,
   program10,
   program11,
+  program12,
   urlLink,
 }) {
   return (
@@ -360,6 +384,7 @@ function BookingCard({
             "AzWayFinder",
             "Fitness Store",
             "Fast-React-Pizza",
+            "TSM poster",
           ].includes(text) && (
             <Tooltip content={program7}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
@@ -374,16 +399,19 @@ function BookingCard({
               </span>
             </Tooltip>
           )}
-          {["Fitness Store", "Fast-React-Pizza", "The Wild Oasis"].includes(
-            text
-          ) && (
+          {[
+            "Fitness Store",
+            "Fast-React-Pizza",
+            "The Wild Oasis",
+            "TSM poster",
+          ].includes(text) && (
             <Tooltip content={program9}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                 {program9}
               </span>
             </Tooltip>
           )}
-          {["The Wild Oasis"].includes(text) && (
+          {["The Wild Oasis", "TSM poster"].includes(text) && (
             <Tooltip content={program10}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                 {program10}
@@ -394,6 +422,13 @@ function BookingCard({
             <Tooltip content={program11}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
                 {program11}
+              </span>
+            </Tooltip>
+          )}
+          {["TSM poster"].includes(text) && (
+            <Tooltip content={program12}>
+              <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
+                {program12}
               </span>
             </Tooltip>
           )}
@@ -436,6 +471,7 @@ function BookingCard({
             "Fitness Store",
             "Fast-React-Pizza",
             "The Wild Oasis",
+            "TSM poster",
           ].includes(text) && (
             <Tooltip content={program5}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
@@ -455,6 +491,7 @@ function BookingCard({
             "AzWayFinder",
             "Fitness Store",
             "Fast-React-Pizza",
+            "TSM poster",
           ].includes(text) && (
             <Tooltip content={program6}>
               <span className="cursor-pointer rounded-full border border-gray-900/5 bg-gray-900/5 p-3 text-gray-900 transition-colors hover:border-gray-900/10 hover:bg-gray-900/10 hover:!opacity-100 group-hover:opacity-70">
